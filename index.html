@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | David PIRES</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="calculatrice.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#accueil" class="logo">David PIRES</a>
+        <ul class="nav-links">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="accueil" class="accueil-section">
+      <div class="container">
+        <div class="text-content fade-in">
+          <h1>Développeur Web Junior</h1>
+          <p>En quête d’une alternance en contrat de professionnalisation – Disponible pour la rentrée 2025 !</p>
+          <div class="social-links fade-in delay-2">
+            <p>Github</p><a href="https://github.com/David-2906" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <p>Linkedin</p><a href="https://www.linkedin.com/in/david-pires-634458263/" target="_blank"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="image-content fade-in delay">
+          <img src="image0 (2).jpeg" alt="Photo de moi" />
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos" class="a-propos-section fade-in delay">
+      <div class="a-propos-content">
+        <h2>À propos</h2>
+        <p>
+          Développeur web junior passionné, je me suis reconverti avec enthousiasme dans ce domaine.
+          Aujourd’hui, je suis à la recherche d’une alternance pour poursuivre mon parcours en Bachelor
+          Concepteur Développeur d’Applications. Curieux, motivé et rigoureux, je prends plaisir à créer
+          des interfaces modernes et efficaces tout en apprenant de nouvelles technologies.
+        </p>
+      </div>
+    </section>
+
+    <section id="projets" class="projets-section fade-in delay">
+      <h2 class="section-title">Projets</h2>
+      <p class="section-intro">
+        Voici quelques projets personnels réalisés dans le but d'améliorer mes compétences.
+        Certains sont encore en cours d'amélioration, d'autres terminés.
+        Vous pouvez interagir directement avec l'un d'eux ci-dessous.
+      </p>
+      <div class="projets-container">
+        <!-- Swiper Carousel -->
+        <div class="swiper mySwiper">
+          <!-- La classe swiper est obligatoire pour que la div soit reconnu comme carrousel -->
+          <div class="swiper-wrapper"> <!-- Conteneur de toutes les slides -->
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <h3>Projet : Calculatrice</h3>
+              <p>Une calculatrice simple et interactive en HTML/CSS/JS.</p>
+              <div id="calculatrice">
+                <input id="display" readonly />
+                <div id="keys" class="calculator">
+                  <button onclick="pressButton(event)" class="operator-btn">+</button>
+                  <button onclick="pressButton(event)">7</button>
+                  <button onclick="pressButton(event)">8</button>
+                  <button onclick="pressButton(event)">9</button>
+                  <button onclick="pressButton(event)" class="operator-btn">-</button>
+                  <button onclick="pressButton(event)">4</button>
+                  <button onclick="pressButton(event)">5</button>
+                  <button onclick="pressButton(event)">6</button>
+                  <button onclick="pressButton(event)" class="operator-btn">*</button>
+                  <button onclick="pressButton(event)">1</button>
+                  <button onclick="pressButton(event)">2</button>
+                  <button onclick="pressButton(event)">3</button>
+                  <button onclick="pressButton(event)" class="operator-btn">/</button>
+                  <button onclick="pressButton(event)">0</button>
+                  <button onclick="pressButton(event)">.</button>
+                  <button onclick="egal()">=</button>
+                  <button onclick="nettoyer()" class="operator-btn">C</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <img src="https://via.placeholder.com/300x150" alt="Image du projet 2" class="project-img" />
+              <h3>Projet : Le Domaine du Roi </h3>
+              <p>Site e-commerce de vente de champagne. Projet de fin d'études. (Symfony, Php, JS, Twig, HTML, CSS)</p>
+              <a href="https://github.com/David-2906/projet-fin-etude" target="_blank" class="github-link">
+                Voir sur GitHub
+              </a>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <img src="https://via.placeholder.com/300x150" alt="Image du projet 3" class="project-img" />
+              <h3>Projet 3</h3>
+              <p>A venir ... To Do List </p>
+              <a href="https://github.com/ton-projet-2" target="_blank" class="github-link">
+                Voir sur GitHub
+              </a>
+            </div>
+          </div>
+          <!-- Pagination (petits points) et navigation -->
+          <div class="swiper-pagination"></div> <!-- swiper-pagination permet d'afficher les points-->
+          <!-- Flèches de navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <h2 class="section-title">Compétences</h2>
+      <div class="skills-container">
+        
+        <div class="skills-category">
+          <h3>Front-end</h3>
+          <div class="skills-grid">
+            <i class="devicon-html5-plain colored" title="HTML5"></i>
+            <i class="devicon-css3-plain colored" title="CSS3"></i>
+            <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+            <i class="devicon-react-original colored" title="React"></i>
+            <i class="devicon-typescript-plain colored" title="TypeScript"></i>
+            <i class="devicon-redux-original colored" title="Redux"></i>
+          </div>
+        </div>
+    
+        <div class="skills-category">
+          <h3>Back-end</h3>
+          <div class="skills-grid">
+            <i class="devicon-php-plain colored" title="PHP"></i>
+            <i class="devicon-symfony-original colored" title="Symfony"></i>
+            <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+            <i class="devicon-express-original colored" title="Express"></i>
+          </div>
+        </div>
+    
+        <div class="skills-category">
+          <h3>Base de données</h3>
+          <div class="skills-grid">
+            <i class="devicon-mysql-plain colored" title="MySQL"></i>
+            <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Me Contacter</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="user_name" required />
+        </div>
+    
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="user_email" required />
+        </div>
+    
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+    
+        <button type="submit" id="send-button">Envoyer 📩</button>
+    
+        <p id="confirmation-message">Message envoyé ! Merci pour votre retour 😊</p>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <!-- Footer -->
+  </footer>
+  <!-- SwiperJS CDN  -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  <script src="calculatrice.js"></script>
+
+</body>
+
+</html>

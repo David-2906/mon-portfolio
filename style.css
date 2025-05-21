@@ -1,0 +1,590 @@
+/* Import d'une police moderne et élégante */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #021127;
+  color: white;
+}
+
+/* ----- NAVBAR GENERALE ----- */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #021127;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* ----- LIENS DE NAVIGATION ----- */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #591489;
+}
+
+/* ----- MENU BURGER (CACHÉ PAR DÉFAUT) ----- */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation du menu burger (croix) */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ----- RESPONSIVE (<= 768px) ----- */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #021127;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 300px; 
+    opacity: 1;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+/* ----- ACCUEIL ----- */
+
+.accueil-section {
+  display: flex;
+  align-items: center; /* centre verticalement */
+  justify-content: center; /* centre horizontalement */
+  flex-direction: row; /* image à droite du texte */
+  gap: 2rem; /* espace entre les deux blocs */
+  min-height: 80vh;
+  padding: 4rem; /* petit espace pour éviter de coller à la navbar */
+} 
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.image-content {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content,
+  .image-content {
+    width: 100%;
+  }
+
+  .accueil-section {
+    padding-top: 16rem;
+  }
+}
+
+/* ----- ANIMATIONs ----- */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeSlideIn 1s ease-out forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 0.3s;
+}
+
+.fade-in.delay-2 {
+  animation-delay: 0.6s;
+}
+
+/* ----- LOGO ----- */
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #591489;
+}
+
+
+/* ----- À PROPOS ----- */
+.a-propos-section {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.a-propos-content {
+  max-width: 1000px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.a-propos-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.a-propos-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .a-propos-section {
+    padding: 2rem 1rem;
+  }
+
+  .a-propos-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .a-propos-section p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ----- PROJETS ----- */
+.projets-section {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.projets-section .section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.projets-section .section-intro {
+  max-width: 1000px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.projets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .projets-section .section-title {
+    font-size: 2rem;
+  }
+
+  .projets-section .section-intro {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .projets-container {
+    gap: 2rem;
+  }
+}
+
+
+/* ===== Swiper : conteneur global ===== */
+.swiper {
+  width: 90%; /* Largeur de ton carrousel */
+  height: auto; /* Hauteur du carrousel */
+  margin: 2rem auto; /* Centrage et espacement */
+  background-color: #021127; /* Fond principal comme ton portfolio */
+  border-radius: 12px; /* Coins arrondis */
+  overflow: hidden; /* Cache les débordements éventuels */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ===== Slides individuelles ===== */
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #031c3a; /* Un peu plus clair pour le contraste */
+  border-radius: 10px;
+  color: #ffffff; /* Couleur du texte */
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  min-height: 100%;
+}
+
+.github-link {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #591489;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.github-link:hover {
+  background-color: #7b2bc7;
+}
+
+/* ===== Image dans les slides ===== */
+.project-img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 180px;
+  object-fit: cover; /* recadre proprement si c’est trop grand */
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Boutons de navigation (flèches) ===== */
+.swiper-button-next,
+.swiper-button-prev {
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #591489; /* Violet plein au survol */
+}
+
+/* ===== Pagination (petits points) ===== */
+.swiper-pagination-bullet {
+  background: #ffffff; /* Points blancs */
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #591489; /* Point actif violet */
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    /* Le carrousel prend presque toute la largeur, pas de hauteur fixe */
+    .swiper {
+      width: 95%;
+      height: auto;
+      padding: 1rem 0;
+    }
+  
+    /* Slides avec padding réduit et texte plus petit */
+    .swiper-slide {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+  
+    /* Images des projets : responsive */
+    .project-img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+  
+    /* Boutons navigation plus petits */
+    .swiper-button-next,
+    .swiper-button-prev {
+      padding: 6px;
+      font-size: 0.8rem;
+    }
+  
+    /* Lien GitHub réduit mais lisible */
+    .github-link {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.6rem;
+    }
+}
+
+/* SECTION COMPÉTENCES */
+#competences {
+  padding: 80px 20px; /* Espacement interne haut/bas + gauche/droite */
+  background-color: #021127; /* Couleur de fond Dark Navy Blue */
+  color: white; /* Couleur du texte */
+  text-align: center; /* Centrage du contenu */
+  min-height: 80vh;
+}
+
+.section-title {
+  font-size: 2.5rem; /* Taille du texte */
+  margin-bottom: 2rem; /* Espace sous le titre */
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column; /* Empile les catégories verticalement */
+  gap: 3rem; /* Espace entre les catégories */
+  max-width: 1000px; /* Largeur max de la section */
+  margin: 0 auto; /* Centre horizontalement */
+}
+
+.skills-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 20px; /* Espace entre les logos */
+  justify-items: center; /* Centre chaque logo horizontalement */
+  align-items: center; /* Aligne verticalement */
+}
+
+.skills-grid i {
+  font-size: 4rem; /* Taille des icônes */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animation au survol */
+  cursor: default; /* Pas de curseur pointer */
+}
+
+.skills-grid i:hover {
+  transform: scale(1.2); /* Zoom */
+  color: #591489; /* violet accentué au survol */
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 2rem; /* Réduction taille titre principal */
+  }
+
+  .skills-category h3 {
+    font-size: 1.5rem; /* Réduction taille des sous-titres */
+  }
+
+  .skills-grid i {
+    font-size: 3rem; /* Icônes légèrement plus petites */
+  }
+}
+
+/* SECTION CONTACT - mise en page générale */
+#contact {
+  min-height: 80vh; /* prend toute la hauteur de l’écran */
+  padding: 5rem 2rem; /* espace intérieur pour respirer autour du contenu */
+  display: flex; /* on utilise flexbox pour centrer verticalement */
+  flex-direction: column; /* éléments empilés verticalement */
+  align-items: center; /* centrage horizontal */
+  justify-content: center; /* centrage vertical */
+  background-color: #021127; /* fond principal (dark navy blue) */
+  color: #fff; /* texte blanc */
+}
+
+/* TITRE DE SECTION */
+#contact h2 {
+  font-size: 2rem; /* taille du titre */
+  margin-bottom: 2rem; /* espace sous le titre */
+  text-align: center; /* centrage du texte */
+}
+
+/* FORMULAIRE GÉNÉRAL */
+#contact-form {
+  width: 100%; /* prend toute la largeur disponible */
+  max-width: 500px; /* mais ne dépasse pas 500px pour rester lisible */
+  background-color: #0d1b3d; /* fond du formulaire légèrement différent */
+  padding: 2rem; /* espace intérieur */
+  border-radius: 1rem; /* coins arrondis */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); /* ombre légère */
+  display: flex; /* flexbox pour aligner les éléments */
+  flex-direction: column; /* disposition verticale */
+  gap: 1.2rem; /* espacement entre les champs */
+}
+
+/* GROUPES DE CHAMPS (label + input ou textarea) */
+.form-group {
+  display: flex; /* on utilise flexbox ici aussi */
+  flex-direction: column; /* empile label + champ */
+}
+
+/* LABELS (ex : Nom, Email, Message) */
+.form-group label {
+  margin-bottom: 0.5rem; /* petit espace sous le label */
+  font-weight: bold; /* texte en gras */
+}
+
+/* CHAMPS DE SAISIE (inputs et textarea) */
+input,
+textarea {
+  padding: 0.8rem; /* espace intérieur dans les champs */
+  border: none; /* suppression du contour par défaut */
+  border-radius: 0.5rem; /* coins arrondis */
+  font-size: 1rem; /* taille du texte */
+  font-family: inherit; /* hérite de la police du body */
+  background-color: #fff; /* fond blanc pour contraster */
+  color: #000; /* texte noir pour lisibilité */
+}
+
+/* MISE EN ÉVIDENCE DES CHAMPS AU FOCUS */
+input:focus,
+textarea:focus {
+  outline: 2px solid #591489; /* contour violet quand actif */
+}
+
+/* BOUTON ENVOYER */
+#send-button {
+  padding: 0.6rem 1.2rem; /* Taille raisonnable du bouton */
+  font-size: 1rem;
+  background-color: #591489; /* Violet */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Centre le bouton */
+  transition: background-color 0.3s ease;
+}
+
+/* EFFET AU SURVOL DU BOUTON */
+#send-button:hover {
+  background-color: #7520b1; /* violet plus clair au survol */
+  transform: scale(1.03); /* léger agrandissement du bouton */
+}
+
+/* MESSAGE DE CONFIRMATION - caché par défaut */
+#confirmation-message {
+  display: none; /* masqué initialement */
+  margin-top: 1rem; /* espace au-dessus du message */
+  text-align: center; /* texte centré */
+  font-weight: bold; /* texte en gras */
+  font-size: 1rem; /* taille de police */
+  color: #4caf50; /* vert pour dire que c’est réussi */
+}
+
+/* VERSION RESPONSIVE POUR MOBILE */
+@media screen and (max-width: 600px) {
+  #contact h2 {
+    font-size: 1.6rem; /* titre légèrement plus petit */
+  }
+
+  #contact-form {
+    padding: 1.5rem; /* moins de padding pour petits écrans */
+  }
+
+  #send-button {
+    align-self: stretch; /* le bouton prend toute la largeur */
+    font-size: 0.95rem; /* texte un peu plus petit */
+    padding: 0.9rem 1rem; /* ajustement du padding */
+  }
+}
